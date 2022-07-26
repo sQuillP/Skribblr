@@ -1,0 +1,92 @@
+<div class="main">
+
+    <div class="column">
+        <div class="title">
+            <h1 class="text">Players</h1>
+        </div>
+
+        <div *ngFor="let player of players" class="user-row">
+            <div *ngIf="player.isHost" class="icon-wrapper">
+                <i style="color: gold;" class="fa-solid fa-star"></i>
+            </div>
+            <div class="name-wrapper">
+                <p class="text username">{{player.username.substring(0,20)}}</p>
+            </div>
+            <div class="user-img-wrapper">
+                <img class="img" src={{displayPlayerImage(player.image)}} alt="">
+            </div>
+        </div>
+    </div>
+
+    <form [formGroup]="gameSetup">
+        <div class="column">
+            <div class="title">
+                <h1 class="text">Game options</h1>
+            </div>
+            <div class="row">
+                <label for="rounds">Number of rounds</label>
+                <input 
+                (change)="onUpdateGameOptions()" 
+                [ngClass]="{'disabled':!isHost}"
+                formControlName="rounds" 
+                id="rounds" 
+                class="numInput" 
+                value="3"
+                type="number" 
+                max="10" 
+                min="1"
+                >
+            </div>
+            <div class="row">
+                <label for="time">Timer length (seconds)</label>
+                <input 
+                (change)="onUpdateGameOptions()" 
+                [ngClass]="{'disabled':!isHost}"
+                formControlName="timer" 
+                id="time" 
+                class="numInput" 
+                type="number" 
+                value="30" 
+                min="30" 
+                max="180"
+                >
+            </div>
+            <div class="row">
+                <label for="customWords">Add custom words here. Separate each word with a comma.</label>
+                <textarea 
+                (keypress)="onUpdateGameOptions()"
+                [ngClass]="{'disabled':!isHost}"
+                formControlName="customWords" 
+                id="customWords" 
+                name="custom-words" 
+                rows="5" 
+                cols="40" 
+                class="custom-words"
+                ></textarea>
+            </div>
+            <div class="row">
+                <button 
+                [disabled]="!isHost" 
+                (click)="onGameStart()"
+                class="btn start-game"
+                [ngClass]="{'disabled':!isHost || !gameSetup.valid}"
+                >Start game</button>
+            </div>
+        </div>
+    </form>
+    <div class="column col3">
+        <div class="title">
+            <h1 class="text">Choose Your Character</h1>
+        </div>
+        <div class="character-gallery">
+
+
+            <div *ngFor="let image of images;" class="character">
+                <div (click)="onSelectImage('../assets/'+image)" [ngClass]="{'disabled':selectedImages.rev_has(image)}" class="character-img-wrapper">
+                    <img class="img" [src]="'../assets/'+image" alt="../assets/unknown.png">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

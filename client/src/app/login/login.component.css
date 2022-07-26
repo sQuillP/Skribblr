@@ -1,0 +1,90 @@
+.main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 70vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+.entry-form{
+    padding: 15px 30px;;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;    border-radius: 10px;
+    background: var(--skribbl-primary);
+    color: white;
+}
+
+.entry-row{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+    font-weight: 500;
+    font-size: 1.3em;
+    box-sizing:border-box;
+    ;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.btn{
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.disabled-btn{
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+.header{
+    font-family: 'Indie Flower', cursive;
+    font-size: 2em;
+}
+
+.middle {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 20px 0px;
+}
+
+.input{
+    padding: 10px;
+    outline: none;
+    border:none;
+    background: #eee;
+
+}
+
+.join-id{
+    background: var(--skribbl-tertiary);
+    color: white;
+    margin: 10px 0px;
+    transition: 100ms linear background;
+}
+
+
+.join-id:hover {
+    background: #89accc;
+}
+
+
+.random-btn{
+    background: limegreen;
+    color: white;
+    transition: 100ms linear background;
+}
+
+.random-btn:hover{
+    background: rgb(40, 165, 40);
+}
+
+.section {
+    padding: 10px 0px
+}
+
+
+

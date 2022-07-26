@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400;500&family=Indie+Flower&display=swap');
+
+:root{
+    --skribbl-primary: #245195;
+    --skribbl-secondary: #c7ebfb;
+    --skribbl-tertiary: #b8d7f4;
+    --bg-faded: #eee;
+}
+
+html,body{
+    margin: 0; padding: 0;
+}
+
+body{
+    background: url('assets/soft_city_pattern_display.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Edu SA Beginner', cursive;
+}
+
+
+.text{
+    margin: 0px;
+    padding: 0px;
+    ;
+}
+
+.sm-1{font-size: 0.9em;}
+.sm-2{font-size: 0.8em;}
+.sm-3{font-size: 0.7em;}
+
+.lg-1{font-size: 1.1em;}
+.lg-2{font-size: 1.2em;;}
+.lg-3{font-size: 1.3em;}
+.lg-4{font-size: 1.4em;}

@@ -1,0 +1,27 @@
+<div class="main">
+
+  <div class="header">
+    <h1 class="header-text">Skribblr v_1.0</h1>
+  </div>
+  <form [formGroup]="loginForm">
+    <div class="entry-form">
+      <div class="entry-row">
+        <label for="name">Enter a name</label>
+        <input formControlName="username" type="text" placeholder="Name" class="input">
+      </div>
+      <div class="entry-row">
+        <button 
+        (click)="onCreateNewGame()"
+        [ngClass]="{'disabled-btn':!loginForm.valid}" [disabled]="!loginForm.valid" class="btn create-btn">Create a new game</button>
+      </div>
+      <div class="entry-row middle">
+        <button (click)="onJoinRandomGame()" [ngClass]="{'disabled-btn':!loginForm.valid}" [disabled]="!loginForm.valid" class="btn random-btn">Join a random room</button>
+      </div>
+      <div class="entry-row section">
+        <label for="join-id">Join a room using room id</label>
+        <input formControlName="roomId" type="text" placeholder="Room ID" class="input">
+        <button (click)="onJoinGameById()" [ngClass]="{'disabled-btn':!loginForm.valid}" [disabled]="!loginForm.valid" class="btn join-id">Join</button>
+      </div>
+    </div>
+  </form>
+  </div>
